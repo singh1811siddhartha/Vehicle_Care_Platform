@@ -1,2 +1,2 @@
-# vehicle_care_platform_dotnet
-Full stack project on vehicle care system using dotnet programming language
+# vehicle_care_platform
+Full stack project on vehicle care system
