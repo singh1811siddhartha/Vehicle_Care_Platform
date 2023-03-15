@@ -1,9 +1,8 @@
 package com.app.repo;
 
+import com.app.pojos.Reviews;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.app.pojos.Reviews;
-
-public interface RepositoryReviews extends JpaRepository<Reviews, Long>  {
+public interface RepositoryReviews extends JpaRepository<Reviews, Long> {
 
 }
