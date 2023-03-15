@@ -1,5 +1,6 @@
 package com.app.service;
 
+import com.app.controller.VehiclesController;
 import com.app.pojos.*;
 import com.app.repo.*;
 import lombok.RequiredArgsConstructor;
@@ -7,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -82,7 +85,7 @@ public class AdminServiceImpl implements AdminsService {
     @Override
     public List<Vehicles> getVehiclesbyUserid(Long id) {
         List<Vehicles> vList = repo5.findAll();
-        List<Vehicles> userVlist = null;
+        List<Vehicles> userVlist = new ArrayList<>();
         Vehicles v = null;
         for (Vehicles veh : vList) {
             if (veh.getUser_id().equals(id)) {
@@ -92,6 +95,11 @@ public class AdminServiceImpl implements AdminsService {
             }
         }
         return userVlist;
+    }
+    // IMPROVED GET VEHICLE BY USER ID
+    public List<Vehicles> getVehiclesByUserIdImproved(Long id){
+        var vehicles = repo5.findAll();
+        return vehicles.stream().filter(vehicles1 -> vehicles1.getUser_id().equals(id)).collect(Collectors.toList());
     }
 
     @Override
