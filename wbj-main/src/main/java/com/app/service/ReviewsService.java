@@ -3,8 +3,11 @@ package com.app.service;
 import com.app.pojos.Reviews;
 
 public interface ReviewsService {
-	public Reviews addReviewsDetails(Reviews rev);
-	public Reviews findByIdd(Long id);
-	public String deleteReviewsDetails(Long id);
-	public Reviews updateReviewsDetails(Reviews rev);
+    Reviews addReviewsDetails(Reviews rev);
+
+    Reviews findByIdd(Long id);
+
+    String deleteReviewsDetails(Long id);
+
+    Reviews updateReviewsDetails(Reviews rev);
 }

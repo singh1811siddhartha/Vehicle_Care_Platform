@@ -1,133 +1,122 @@
 package com.app.pojos;
 
-import java.util.Date;
-
-import javax.persistence.*;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+import javax.persistence.*;
+import java.util.Date;
+
 @Entity
 @Table(name = "vehicles")
 public class Vehicles extends BaseEntity {
-	
-	public Vehicles() {
-		
-	}
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-   
     @JoinColumn(name = "user_id", nullable = false)
     private Long user_id;
-
     @Column(name = "make", nullable = false)
     private String make;
-
     @Column(name = "model", nullable = false)
     private String model;
-
     @Column(name = "year", nullable = false)
     private int year;
-
     @Column(name = "color", nullable = false)
     private String color;
-
     @Column(name = "license_plate", nullable = false)
     private String licensePlate;
-
     @Temporal(TemporalType.TIMESTAMP)
-	@GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Date createdAt;
-    
 
-	public Long getId() {
-		return id;
-	}
+    public Vehicles() {
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    }
 
-	public Long getUser_id() {
-		return user_id;
-	}
 
-	public void setUser_id(Long user_id) {
-		this.user_id = user_id;
-	}
+    public Vehicles(Long id, Long user_id, String make, String model, int year, String color,
+                    String licensePlate, Date createdAt) {
 
-	public String getMake() {
-		return make;
-	}
+        this.id = id;
+        this.user_id = user_id;
+        this.make = make;
+        this.model = model;
+        this.year = year;
+        this.color = color;
+        this.licensePlate = licensePlate;
+        this.createdAt = createdAt;
+    }
 
-	public void setMake(String make) {
-		this.make = make;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public String getModel() {
-		return model;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setModel(String model) {
-		this.model = model;
-	}
+    public Long getUser_id() {
+        return user_id;
+    }
 
-	public int getYear() {
-		return year;
-	}
+    public void setUser_id(Long user_id) {
+        this.user_id = user_id;
+    }
 
-	public void setYear(int year) {
-		this.year = year;
-	}
+    public String getMake() {
+        return make;
+    }
 
-	public String getColor() {
-		return color;
-	}
+    public void setMake(String make) {
+        this.make = make;
+    }
 
-	public void setColor(String color) {
-		this.color = color;
-	}
+    public String getModel() {
+        return model;
+    }
 
-	public String getLicensePlate() {
-		return licensePlate;
-	}
+    public void setModel(String model) {
+        this.model = model;
+    }
 
-	public void setLicensePlate(String licensePlate) {
-		this.licensePlate = licensePlate;
-	}
+    public int getYear() {
+        return year;
+    }
 
-	public Date getCreatedAt() {
-		return createdAt;
-	}
+    public void setYear(int year) {
+        this.year = year;
+    }
 
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
+    public String getColor() {
+        return color;
+    }
 
-	@Override
-	public String toString() {
-		return "Vehicles [id=" + id + ", user_id=" + user_id + ", make=" + make + ", model=" + model + ", year=" + year
-				+ ", color=" + color + ", licensePlate=" + licensePlate + ", createdAt=" + createdAt + "]";
-	}
+    public void setColor(String color) {
+        this.color = color;
+    }
 
-	public Vehicles(Long id, Long user_id, String make, String model, int year, String color,
-			String licensePlate, Date createdAt) {
-		
-		this.id = id;
-		this.user_id = user_id;
-		this.make = make;
-		this.model = model;
-		this.year = year;
-		this.color = color;
-		this.licensePlate = licensePlate;
-		this.createdAt = createdAt;
-	}
+    public String getLicensePlate() {
+        return licensePlate;
+    }
+
+    public void setLicensePlate(String licensePlate) {
+        this.licensePlate = licensePlate;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    @Override
+    public String toString() {
+        return "Vehicles [id=" + id + ", user_id=" + user_id + ", make=" + make + ", model=" + model + ", year=" + year
+                + ", color=" + color + ", licensePlate=" + licensePlate + ", createdAt=" + createdAt + "]";
+    }
 
 }
 
