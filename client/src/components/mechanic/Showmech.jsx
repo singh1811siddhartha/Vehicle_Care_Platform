@@ -68,7 +68,7 @@ const Showmech = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/api/admin/viewservices")
+      .get(`http://localhost:8080/api/admin/viewservicesbymechid/${id}`)
       .then((response) => setServices([...services, ...response.data]))
       .catch((err) => console.log(err));
   }, []);
@@ -254,7 +254,7 @@ const Showmech = () => {
             </tr>
             <tr>
               <td colSpan="2">
-                <button type="submit">Update Data</button>
+                <button className="btn btn-primary" type="submit">Update Data</button>
               </td>
             </tr>
           </tbody>

@@ -59,22 +59,22 @@ const ShowAdmin = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/api/admin/viewuser")
+      .get(`http://localhost:8080/api/admin/viewuser`)
       .then((response) => setUsers([...users, ...response.data]))
       .catch((err) => console.log(err));
 
 	axios
-      .get("http://localhost:8080/api/admin/viewmechanic")
+      .get(`http://localhost:8080/api/admin/viewmechanic`)
       .then((response) => setMech([...mech, ...response.data]))
       .catch((err) => console.log(err));
 
 	axios
-      .get("http://localhost:8080/api/admin/viewvehicles")
+      .get(`http://localhost:8080/api/admin/viewvehicles`)
       .then((response) => setVeh([...veh, ...response.data]))
       .catch((err) => console.log(err));
 
 	axios
-      .get("http://localhost:8080/api/admin/viewservices")
+      .get(`http://localhost:8080/api/admin/viewservices`)
       .then((response) => setServices([...services, ...response.data]))
       .catch((err) => console.log(err));
   }, []);
@@ -354,7 +354,7 @@ const ShowAdmin = () => {
             </tr>
             <tr>
               <td colSpan="2">
-                <button type="submit">Update Data</button>
+                <button className="btn btn-primary" type="submit">Update Data</button>
               </td>
             </tr>
           </tbody>

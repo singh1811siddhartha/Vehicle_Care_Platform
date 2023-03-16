@@ -5,11 +5,8 @@ import com.app.pojos.Services;
 
 
 public interface ServicesSer {
-    Services addServicesDetails(Services ser);
-
-    Services findByIdd(Long id);
-
-    String deleteServicesDetails(Long id);
-
-    Services updateServicesDetails(Services ser);
+	public Services addServicesDetails(Services ser);
+	public Services findByIdd(Long id);
+	public String deleteServicesDetails(Long id);
+	public Services updateServicesDetails(Services ser);
 }

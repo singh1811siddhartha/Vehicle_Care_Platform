@@ -3,13 +3,10 @@ package com.app.service;
 import com.app.pojos.Appointments;
 
 public interface AppointmentsService {
-
-    Appointments addAppointmentsDetails(Appointments app);
-
-    Appointments findByIdd(Long id);
-
-    String deleteAppointmentsDetails(Long id);
-
-    Appointments updateAppointmentsDetails(Appointments app);
+	
+	public Appointments addAppointmentsDetails(Appointments app);
+	public Appointments findByIdd(Long id);
+	public String deleteAppointmentsDetails(Long id);
+	public Appointments updateAppointmentsDetails(Appointments app);
 
 }

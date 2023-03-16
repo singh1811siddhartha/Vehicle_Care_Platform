@@ -1,7 +1,8 @@
 package com.app.repo;
 
-import com.app.pojos.Mechanic;
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.app.pojos.Mechanic;
 
 public interface Repositorymechanic extends JpaRepository<Mechanic, Long> {
 
